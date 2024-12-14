@@ -15,7 +15,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="border-2">
     {{ post.text }}
     <button @click="emit('post-delete', post)">(delete)</button>
     <button
