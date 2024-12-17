@@ -1,46 +1,28 @@
 <script setup lang="ts">
-  import { ECheckpoint } from '@/enums';
-  import type {
-    TCheckpoint,
-    TCheckpointAddPost,
-    TCheckpointDeletePost,
-    TCheckpointSwapPosts,
-  } from '@/types';
+  import {
+    Checkpoint,
+    CheckpointAddPost,
+    CheckpointDeletePost,
+  } from '@/models';
   import { computed } from 'vue';
 
   const props = defineProps<{
-    checkpoint: TCheckpoint;
+    checkpoint: Checkpoint;
   }>();
 
-  const checkpointData = computed(() => {
-    switch (props.checkpoint.type) {
-      case ECheckpoint.ADD: {
-        const checkpoint = props.checkpoint as TCheckpointAddPost;
-        return {
-          color: 'blue-lighten-4',
-          header: 'Checkpoint - Add',
-          text: `Added post with index ${checkpoint.index}`,
-        };
-      }
+  const color = computed(() => {
+    if (props.checkpoint instanceof CheckpointAddPost) return 'blue-lighten-4';
+    if (props.checkpoint instanceof CheckpointDeletePost)
+      return 'red-lighten-4';
+    return 'green-lighten-4';
+  });
 
-      case ECheckpoint.DELETE: {
-        const checkpoint = props.checkpoint as TCheckpointDeletePost;
-        return {
-          color: 'red-lighten-4',
-          header: 'Checkpoint - Delete',
-          text: `Deleted post with id ${checkpoint.id} and index ${checkpoint.index}`,
-        };
-      }
-
-      default: {
-        const checkpoint = props.checkpoint as TCheckpointSwapPosts;
-        return {
-          color: 'green-lighten-4',
-          header: 'Checkpoint - Swap',
-          text: `Swapped posts with indexes ${checkpoint.firstIndex} and ${checkpoint.secondIndex}`,
-        };
-      }
-    }
+  const header = computed(() => {
+    if (props.checkpoint instanceof CheckpointAddPost)
+      return 'Checkpoint - Add';
+    if (props.checkpoint instanceof CheckpointDeletePost)
+      return 'Checkpoint - Delete';
+    return 'Checkpoint - Swap';
   });
 </script>
 
@@ -50,9 +32,9 @@
     class="m-1"
     elevation="2"
     max-width="444"
-    :color="checkpointData.color"
-    :title="checkpointData.header"
-    :text="checkpointData.text"
+    :color="color"
+    :title="header"
+    :text="checkpoint.description"
   >
     <template v-slot:actions>
       <v-btn text="Rewind"></v-btn>

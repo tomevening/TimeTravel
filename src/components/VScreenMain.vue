@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { useStoreMain } from '@/stores';
+  import TempTests from './TempTests.vue';
   import VCheckpoints from './VCheckpoints.vue';
   import VPosts from './VPosts.vue';
 
@@ -18,6 +19,8 @@
       <VCheckpoints :checkpoints="storeMain.checkpoints" />
     </div>
   </div>
+
+  <TempTests />
 </template>
 
 <style lang="scss"></style>

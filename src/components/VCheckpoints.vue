@@ -1,9 +1,10 @@
 <script setup lang="ts">
-  import type { TCheckpoint } from '@/types';
+  // import type { TCheckpoint } from '@/types';
+  import { Checkpoint } from '@/models';
   import VCheckpointCheckpoints from './VCheckpointCheckpoints.vue';
 
   defineProps<{
-    checkpoints: TCheckpoint[];
+    checkpoints: Checkpoint[];
   }>();
 </script>
 
