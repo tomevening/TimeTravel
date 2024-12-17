@@ -1,3 +1,4 @@
+import { ECheckpoint } from '@/enums';
 import type { TCheckpoint, TPost } from '@/types';
 import { myFetch, newID } from '@/utils';
 import { defineStore } from 'pinia';
@@ -18,7 +19,11 @@ export const useStoreMain = defineStore('store-main', () => {
 
   function postAdd() {
     posts.push({ id: currentIndex, text: `Post ${currentIndex}` });
-    checkpoints.push({ index: currentIndex, checkpointId: newID() });
+    checkpoints.push({
+      index: currentIndex,
+      checkpointId: newID(),
+      type: ECheckpoint.ADD,
+    });
     ++currentIndex;
   }
 
@@ -31,6 +36,7 @@ export const useStoreMain = defineStore('store-main', () => {
       index: postIndex,
       id: postToDelete.id,
       checkpointId: newID(),
+      type: ECheckpoint.DELETE,
     });
   }
 
@@ -42,6 +48,7 @@ export const useStoreMain = defineStore('store-main', () => {
       firstIndex: postOneIndex,
       secondIndex: postTwoIndex,
       checkpointId: newID(),
+      type: ECheckpoint.SWAP,
     });
   }
 

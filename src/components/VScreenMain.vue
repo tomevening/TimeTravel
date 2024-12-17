@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import TempTest from '@/components/TempTest.vue';
   import { useStoreMain } from '@/stores';
   import VCheckpoints from './VCheckpoints.vue';
   import VPosts from './VPosts.vue';
+
   const storeMain = useStoreMain();
 </script>
 
@@ -18,7 +18,6 @@
       <VCheckpoints :checkpoints="storeMain.checkpoints" />
     </div>
   </div>
-  <TempTest />
 </template>
 
 <style lang="scss"></style>

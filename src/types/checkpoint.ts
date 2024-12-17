@@ -1,18 +1,23 @@
-type TCheckpointSwapPosts = {
+import { ECheckpoint } from '@/enums';
+
+export type TCheckpointSwapPosts = {
   firstIndex: number;
   secondIndex: number;
   checkpointId: string;
+  type: ECheckpoint;
 };
 
-type TCheckpointAddPost = {
+export type TCheckpointAddPost = {
   index: number;
   checkpointId: string;
+  type: ECheckpoint;
 };
 
-type TCheckpointDeletePost = {
+export type TCheckpointDeletePost = {
   index: number;
   id: number;
   checkpointId: string;
+  type: ECheckpoint;
 };
 
 export type TCheckpoint =
