@@ -24,6 +24,13 @@
       return 'Checkpoint - Delete';
     return 'Checkpoint - Swap';
   });
+
+  const icon = computed(() => {
+    if (props.checkpoint instanceof CheckpointAddPost) return 'mdi-plus-circle';
+    if (props.checkpoint instanceof CheckpointDeletePost)
+      return 'mdi-delete-empty';
+    return 'mdi-swap-vertical-variant';
+  });
 </script>
 
 <template>
@@ -32,6 +39,7 @@
     class="m-1"
     elevation="2"
     max-width="444"
+    :prepend-icon="icon"
     :color="color"
     :title="header"
     :text="checkpoint.description"

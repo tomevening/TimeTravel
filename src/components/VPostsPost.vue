@@ -22,7 +22,7 @@
       elevation="1"
       color="surface-variant"
       max-width="444"
-      prepend-avatar="/icons/post.svg"
+      prepend-icon="mdi-note"
       :title="post.text"
     >
       <template v-slot:actions>
