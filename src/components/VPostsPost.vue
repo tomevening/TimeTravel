@@ -27,6 +27,10 @@
     >
       <template v-slot:actions>
         <v-btn
+          @click="emit('post-delete', post)"
+          text="Delete"
+        ></v-btn>
+        <v-btn
           :disabled="!showMoveUp"
           @click="emit('post-move-up', post)"
           text="Move up"
@@ -35,10 +39,6 @@
           :disabled="!showMoveDown"
           @click="emit('post-move-down', post)"
           text="Move down"
-        ></v-btn>
-        <v-btn
-          @click="emit('post-delete', post)"
-          text="Delete"
         ></v-btn>
       </template>
     </v-card>

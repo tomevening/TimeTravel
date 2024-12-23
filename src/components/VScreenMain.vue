@@ -13,7 +13,7 @@
       <div>
         <VPosts :posts="storeMain.posts" />
       </div>
-      <button @click="storeMain.postAdd">Add post</button>
+      <button @click="storeMain.timeTravel.postAdd">Add post</button>
     </div>
     <div class="col-span-2">
       <VCheckpoints :checkpoints="storeMain.checkpoints" />

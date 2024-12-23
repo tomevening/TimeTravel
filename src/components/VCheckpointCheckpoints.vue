@@ -31,6 +31,10 @@
       return 'mdi-delete-empty';
     return 'mdi-swap-vertical-variant';
   });
+
+  const emit = defineEmits<{
+    (event: 'rewind', checkpoint: Checkpoint): void;
+  }>();
 </script>
 
 <template>
@@ -45,7 +49,10 @@
     :text="checkpoint.description"
   >
     <template v-slot:actions>
-      <v-btn text="Rewind"></v-btn>
+      <v-btn
+        @click="emit('rewind', checkpoint)"
+        text="Rewind"
+      ></v-btn>
     </template>
   </v-card>
 </template>

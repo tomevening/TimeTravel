@@ -12,4 +12,6 @@ export class CheckpointSwapPosts extends Checkpoint {
       `Swapped posts with indexes ${firstIndex} and ${secondIndex}`,
     );
   }
+
+  public rewind(): void {}
 }
