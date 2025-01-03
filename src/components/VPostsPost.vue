@@ -17,11 +17,11 @@
 <template>
   <div>
     <v-card
-      variant="outlined"
+      variant="elevated"
       class="m-1"
       elevation="1"
-      color="surface-variant"
-      max-width="444"
+      color="blue-grey-darken-1"
+      max-width="100%"
       prepend-icon="mdi-note"
       :title="post.text"
     >
@@ -43,22 +43,6 @@
       </template>
     </v-card>
   </div>
-  <!-- <div class="border-2">
-    {{ post.text }}
-    <button @click="emit('post-delete', post)">(delete)</button>
-    <button
-      v-show="showMoveUp"
-      @click="emit('post-move-up', post)"
-    >
-      (move up)
-    </button>
-    <button
-      v-show="showMoveDown"
-      @click="emit('post-move-down', post)"
-    >
-      (move down)
-    </button>
-  </div> -->
 </template>
 
 <style lang="scss"></style>

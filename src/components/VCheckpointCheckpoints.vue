@@ -42,7 +42,7 @@
     variant="elevated"
     class="m-1"
     elevation="2"
-    max-width="444"
+    max-width="100%"
     :prepend-icon="icon"
     :color="color"
     :title="header"
