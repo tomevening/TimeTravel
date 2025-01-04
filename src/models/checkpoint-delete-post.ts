@@ -9,6 +9,4 @@ export class CheckpointDeletePost extends Checkpoint {
   ) {
     super(checkpointType, `Deleted post with id ${id} and index ${index}`);
   }
-
-  public rewind(): void {}
 }

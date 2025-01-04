@@ -4,6 +4,7 @@ function sleep(delay: number) {
   return new Promise(r => setTimeout(r, delay));
 }
 
+/** Imitates fetch: returns the data after a short delay */
 function mockFetch<T extends Map<unknown, unknown>, P extends string = string>(
   prefix: P,
   data: T,

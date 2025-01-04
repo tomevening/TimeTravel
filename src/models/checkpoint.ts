@@ -8,6 +8,4 @@ export abstract class Checkpoint {
     public description: string,
     public readonly checkpointId: string = newID(),
   ) {}
-
-  public abstract rewind(): void;
 }

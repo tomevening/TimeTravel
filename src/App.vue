@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div><VScreenMain /></div>
+  <VScreenMain />
 </template>
 
 <style>

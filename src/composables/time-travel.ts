@@ -44,21 +44,10 @@ export function useTimeTravel(
     checkpoints.unshift(
       new CheckpointSwapPosts(ECheckpoint.SWAP, postOneIndex, postTwoIndex),
     );
-    // checkpoints.push({
-    //   firstIndex: postOneIndex,
-    //   secondIndex: postTwoIndex,
-    //   checkpointId: newID(),
-    //   type: ECheckpoint.SWAP,
-    // });
   }
 
   function postAdd() {
     posts.push({ id: currentIndex, text: `Post ${currentIndex}` });
-    // checkpoints.push({
-    //   index: currentIndex,
-    //   checkpointId: newID(),
-    //   type: ECheckpoint.ADD,
-    // });
     checkpoints.unshift(new CheckpointAddPost(ECheckpoint.ADD, currentIndex));
     ++currentIndex;
   }
@@ -71,13 +60,6 @@ export function useTimeTravel(
     checkpoints.unshift(
       new CheckpointDeletePost(ECheckpoint.DELETE, postIndex, postToDelete.id),
     );
-
-    // checkpoints.push({
-    //   index: postIndex,
-    //   id: postToDelete.id,
-    //   checkpointId: newID(),
-    //   type: ECheckpoint.DELETE,
-    // });
   }
 
   function undo(checkpoint: Checkpoint) {
@@ -109,7 +91,6 @@ export function useTimeTravel(
   }
 
   function undoDelete(checkpoint: CheckpointDeletePost) {
-    console.log({ checkpoint });
     const temp = {
       id: checkpoint.id,
       text: `Post ${checkpoint.id}`,

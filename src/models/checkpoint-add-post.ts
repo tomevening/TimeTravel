@@ -8,6 +8,4 @@ export class CheckpointAddPost extends Checkpoint {
   ) {
     super(checkpointType, `Added post with index ${index}`);
   }
-
-  public rewind(): void {}
 }

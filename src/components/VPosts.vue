@@ -17,7 +17,11 @@
     <TransitionGroup
       name="list"
       tag="ul"
-      class="h-[70vh] w-4/6 overflow-x-hidden overflow-y-scroll scrollbar scrollbar-track-white scrollbar-thumb-gray-500 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-h-[6.25rem]"
+      :class="[
+        'scrollbar-track-gray-200 scrollbar-thumb-gray-500',
+        'scrollbar-track-rounded-full scrollbar-thumb-rounded-full',
+        'h-[70vh] overflow-x-hidden overflow-y-scroll scrollbar scrollbar-w-1 scrollbar-h-[6.25rem]',
+      ]"
     >
       <VPostsPost
         v-for="post in posts"

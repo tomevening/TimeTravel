@@ -1,8 +1,7 @@
 <script setup lang="ts">
-  // import type { TCheckpoint } from '@/types';
   import { Checkpoint } from '@/models';
   import { useStoreMain } from '@/stores';
-  import VCheckpointCheckpoints from './VCheckpointCheckpoints.vue';
+  import VCheckpointsCheckpoint from './VCheckpointsCheckpoint.vue';
 
   defineProps<{
     checkpoints: Checkpoint[];
@@ -16,7 +15,7 @@
       tag="ul"
       class="h-[70vh] overflow-x-hidden overflow-y-scroll scrollbar scrollbar-track-white scrollbar-thumb-gray-500 scrollbar-track-rounded-full scrollbar-thumb-rounded-full scrollbar-w-1 scrollbar-h-[6.25rem]"
     >
-      <VCheckpointCheckpoints
+      <VCheckpointsCheckpoint
         v-for="checkpoint in checkpoints"
         :key="checkpoint.checkpointId"
         :checkpoint="checkpoint"
