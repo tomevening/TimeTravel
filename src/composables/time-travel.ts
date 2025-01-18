@@ -37,12 +37,12 @@ export function useTimeTravel(
     postsSwap(postIndex, secondPostIndex);
   }
 
-  function postsSwap(postOneIndex: number, postTwoIndex: number) {
-    const postOne = posts[postOneIndex];
-    posts[postOneIndex] = posts[postTwoIndex];
-    posts[postTwoIndex] = postOne;
+  function postsSwap(postAIndex: number, postBIndex: number) {
+    const postA = posts[postAIndex];
+    posts[postAIndex] = posts[postBIndex];
+    posts[postBIndex] = postA;
     checkpoints.unshift(
-      new CheckpointSwapPosts(ECheckpoint.SWAP, postOneIndex, postTwoIndex),
+      new CheckpointSwapPosts(ECheckpoint.SWAP, postAIndex, postBIndex),
     );
   }
 
@@ -78,9 +78,9 @@ export function useTimeTravel(
   }
 
   function undoSwap(checkpoint: CheckpointSwapPosts) {
-    const postOne = posts[checkpoint.firstIndex];
+    const postA = posts[checkpoint.firstIndex];
     posts[checkpoint.firstIndex] = posts[checkpoint.secondIndex];
-    posts[checkpoint.secondIndex] = postOne;
+    posts[checkpoint.secondIndex] = postA;
   }
 
   function undoAdd(checkpoint: CheckpointAddPost) {
