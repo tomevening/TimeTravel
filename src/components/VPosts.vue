@@ -3,9 +3,7 @@
   import type { TPost } from '@/types';
   import VPostsPost from './VPostsPost.vue';
 
-  const postDelete = useStoreMain().timeTravel.postDelete;
-  const postMoveUp = useStoreMain().timeTravel.postMoveUp;
-  const postMoveDown = useStoreMain().timeTravel.postMoveDown;
+  const { postMoveUp, postMoveDown, postDelete } = useStoreMain().timeTravel;
 
   defineProps<{
     posts: TPost[];

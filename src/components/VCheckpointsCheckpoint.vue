@@ -14,7 +14,7 @@
     if (props.checkpoint instanceof CheckpointAddPost) return 'blue-lighten-4';
     if (props.checkpoint instanceof CheckpointDeletePost)
       return 'red-lighten-4';
-    return 'green-lighten-4';
+    return 'green-lighten-4'; // instanceof CheckpointSwapPosts
   });
 
   const header = computed(() => {
@@ -22,14 +22,14 @@
       return 'Checkpoint - Add';
     if (props.checkpoint instanceof CheckpointDeletePost)
       return 'Checkpoint - Delete';
-    return 'Checkpoint - Swap';
+    return 'Checkpoint - Swap'; // instanceof CheckpointSwapPosts
   });
 
   const icon = computed(() => {
     if (props.checkpoint instanceof CheckpointAddPost) return 'mdi-plus-circle';
     if (props.checkpoint instanceof CheckpointDeletePost)
       return 'mdi-delete-empty';
-    return 'mdi-swap-vertical-variant';
+    return 'mdi-swap-vertical-variant'; // instanceof CheckpointSwapPosts
   });
 
   const emit = defineEmits<{

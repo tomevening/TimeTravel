@@ -73,7 +73,6 @@ export function useTimeTravel(
     }
     if (checkpoint instanceof CheckpointSwapPosts) {
       undoSwap(checkpoint);
-      return;
     }
   }
 
@@ -91,11 +90,11 @@ export function useTimeTravel(
   }
 
   function undoDelete(checkpoint: CheckpointDeletePost) {
-    const temp = {
+    const post = {
       id: checkpoint.id,
       text: `Post ${checkpoint.id}`,
     };
-    posts.splice(checkpoint.index, 0, temp);
+    posts.splice(checkpoint.index, 0, post);
   }
 
   function rewind(checkpoint: Checkpoint) {
@@ -106,5 +105,5 @@ export function useTimeTravel(
     } while (checkpoint != lastCheckpoint);
   }
 
-  return { postsSwap, postAdd, postDelete, rewind, postMoveUp, postMoveDown };
+  return { postMoveUp, postMoveDown, postDelete, postsSwap, postAdd, rewind };
 }
