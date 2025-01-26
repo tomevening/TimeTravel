@@ -6,7 +6,7 @@ import {
   CheckpointSwapPosts,
 } from '@/models';
 import type { TPost } from '@/types';
-import { myFetch } from '@/utils';
+import { fetchPosts } from '@/utils';
 import type { ShallowReactive } from 'vue';
 
 export function useTimeTravel(
@@ -15,7 +15,7 @@ export function useTimeTravel(
 ) {
   let currentIndex = 1;
 
-  myFetch('/posts/').then(value => {
+  fetchPosts('/posts/').then(value => {
     const postsIds = value as number[];
     for (const post of postsIds) {
       posts.push({ id: post, text: `Post ${post}` });

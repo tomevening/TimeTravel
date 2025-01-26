@@ -1,12 +1,12 @@
 <script setup lang="ts">
-  import { useStoreMain } from '@/stores';
   import type { TPost } from '@/types';
   import VPostsPost from './VPostsPost.vue';
 
-  const { postMoveUp, postMoveDown, postDelete } = useStoreMain().timeTravel;
-
   defineProps<{
     posts: TPost[];
+    postMoveUp: (post: TPost) => void;
+    postMoveDown: (post: TPost) => void;
+    postDelete: (post: TPost) => void;
   }>();
 </script>
 

@@ -21,7 +21,7 @@ function mockFetch<T extends Map<unknown, unknown>, P extends string = string>(
   };
 }
 
-export const myFetch = mockFetch(
+export const fetchPosts = mockFetch(
   'posts',
   new Map([
     ['1', { id: 1 }],
@@ -37,5 +37,5 @@ type TPost = { id: string };
 const postIds = shallowRef<string[] | null>(null);
 const postTwo = shallowRef<TPost | null>(null);
 
-myFetch('/posts/').then(value => (postIds.value = value as string[]));
-myFetch('/posts/2').then(value => (postTwo.value = value as TPost));
+fetchPosts('/posts/').then(value => (postIds.value = value as string[]));
+fetchPosts('/posts/2').then(value => (postTwo.value = value as TPost));

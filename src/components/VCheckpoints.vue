@@ -1,10 +1,10 @@
 <script setup lang="ts">
   import { Checkpoint } from '@/models';
-  import { useStoreMain } from '@/stores';
   import VCheckpointsCheckpoint from './VCheckpointsCheckpoint.vue';
 
   defineProps<{
     checkpoints: Checkpoint[];
+    rewind: (checkpoint: Checkpoint) => void;
   }>();
 </script>
 
@@ -23,7 +23,7 @@
         v-for="checkpoint in checkpoints"
         :key="checkpoint.checkpointId"
         :checkpoint="checkpoint"
-        @rewind="useStoreMain().timeTravel.rewind"
+        @rewind="rewind"
       />
     </TransitionGroup>
   </div>
@@ -33,16 +33,12 @@
   .list-move,
   .list-enter-active,
   .list-leave-active {
-    transition: all 0.1s ease;
+    transition: all 0.15s ease;
   }
 
   .list-enter-from,
   .list-leave-to {
     opacity: 0;
-    transform: translateX(10px);
-  }
-
-  .list-leave-active {
-    position: absolute;
+    transform: translateX(30px);
   }
 </style>
