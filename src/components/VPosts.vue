@@ -11,7 +11,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="min-w-[28rem]">
     <TransitionGroup
       name="list"
       tag="ul"
@@ -36,7 +36,15 @@
 </template>
 
 <style scoped lang="scss">
-  .list-move {
-    transition: all 0.3s ease;
+  .list-move,
+  .list-enter-active,
+  .list-leave-active {
+    transition: all 0.15s ease;
+  }
+
+  .list-enter-from,
+  .list-leave-to {
+    opacity: 0;
+    transform: translateX(-30px);
   }
 </style>

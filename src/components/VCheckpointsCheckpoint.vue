@@ -40,9 +40,10 @@
 <template>
   <v-card
     variant="elevated"
-    class="m-1"
+    class="mx-1 mb-[0.3rem]"
     elevation="2"
     max-width="100%"
+    width="28rem"
     :prepend-icon="icon"
     :color="color"
     :title="header"

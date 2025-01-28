@@ -18,11 +18,12 @@
   <div>
     <v-card
       variant="elevated"
-      class="m-1"
+      class="mx-1 mb-1"
       elevation="1"
       color="blue-grey-darken-1"
-      max-width="100%"
+      max-width="500%"
       prepend-icon="mdi-note"
+      width="27rem"
       :title="post.text"
     >
       <template v-slot:actions>

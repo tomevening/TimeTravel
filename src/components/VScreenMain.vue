@@ -11,8 +11,8 @@
 </script>
 
 <template>
-  <div class="grid grid-cols-5 gap-2">
-    <div class="col-span-3 w-4/6">
+  <div class="mx-auto flex max-w-[80rem] justify-between p-[0.9375rem]">
+    <div>
       <div>
         <VPosts
           :posts="storeMain.posts"
@@ -33,7 +33,7 @@
         Add post
       </v-btn>
     </div>
-    <div class="col-span-2">
+    <div>
       <VCheckpoints
         :checkpoints="storeMain.checkpoints"
         :rewind="timeTravel.rewind"
