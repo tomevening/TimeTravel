@@ -1,45 +1,55 @@
-# TimeTravel
+# Posts with Time Travel
 
-This template should help get you started developing with Vue 3 in Vite.
+## Demo video
 
-## Recommended IDE Setup
+[![Demo Video](https://img.youtube.com/vi/tvCQE_dx3gU/0.jpg)](https://youtu.be/tvCQE_dx3gU)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Overview
 
-## Type Support for `.vue` Imports in TS
+"Posts with Time Travel" is a dynamic web application that allows users to
+manage a list of posts with a somewhat innovative time-travel feature. Users can
+reorder, add, or delete posts, and easily revert to previous states using
+checkpoints.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Features
 
-## Customize configuration
+### **Dynamic Post Management**
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Users can:
 
-## Project Setup
+- Move posts up or down in the list.
+- Delete posts.
+- Add new posts to the list.
 
-```sh
-npm install
-```
+### **Time Travel Functionality**
 
-### Compile and Hot-Reload for Development
+- Each action is saved as a checkpoint that the user can access
+- Users can rewind to any checkpoint, allowing them to undo any number of
+  actions at once.
 
-```sh
-npm run dev
-```
+### **Visual Feedback**:
 
-### Type-Check, Compile and Minify for Production
+- Checkpoints are color-coded and icon-based, representing different actions.
+- Smooth animations for adding, moving, and deleting posts enhance user
+  experience.
 
-```sh
-npm run build
-```
+### **Mock Data Fetching**
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+Posts are retrieved using a mock fetch function that simulates asynchronous data
+retrieval.
 
-```sh
-npm run test:unit
-```
+## Technologies Used
 
-### Lint with [ESLint](https://eslint.org/)
+- Vue
+- Vite
+- TypeScript
+- Tailwind CSS
+- CSS
+- Pinia
+- Vuetify
+- Tailwind Scrollbar
 
-```sh
-npm run lint
-```
+## License
+
+This project is licensed under the MIT License - see the [License](LICENSE) file
+for details.
